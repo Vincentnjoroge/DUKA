@@ -41,15 +41,14 @@ export default function StockAdjustmentScreen() {
 
     if (mvError) { setSaving(false); Alert.alert('Error', mvError.message); return; }
 
-    // Update product stock
-    const { error: upError } = await supabase.rpc('adjust_product_stock', { p_product_id: productId, p_quantity: actualQty }).catch(() =>
-      supabase.from('products').update({ current_stock: supabase.rpc ? undefined : 0 }).eq('id', productId)
-    );
-
-    // Direct update fallback
+    // Update product stock directly
     const { data: prod } = await supabase.from('products').select('current_stock').eq('id', productId).single();
     if (prod) {
-      await supabase.from('products').update({ current_stock: prod.current_stock + actualQty }).eq('id', productId);
+      const { error: upError } = await supabase
+        .from('products')
+        .update({ current_stock: Math.max(0, prod.current_stock + actualQty) })
+        .eq('id', productId);
+      if (upError) { setSaving(false); Alert.alert('Error', upError.message); return; }
     }
 
     // Audit log
