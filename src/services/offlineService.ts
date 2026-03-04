@@ -1,12 +1,12 @@
 // DUKA POS - Offline Queue Service
 // Handles offline cash sales and syncs when connectivity restored
 
-import { createMMKV } from 'react-native-mmkv';
+import { createStorage } from '../config/storage';
 import { supabase } from '../config/supabase';
 import { OFFLINE_QUEUE_KEY, PRODUCT_CACHE_KEY } from '../constants';
 import type { Product } from '../types';
 
-const storage = createMMKV({ id: 'duka-offline' });
+const storage = createStorage('duka-offline');
 
 export interface OfflineOperation {
   id: string;

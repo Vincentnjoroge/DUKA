@@ -1,9 +1,9 @@
 import { create } from 'zustand';
-import { createMMKV } from 'react-native-mmkv';
+import { createStorage } from '../config/storage';
 import { supabase } from '../config/supabase';
 import type { User } from '../types';
 
-const storage = createMMKV({ id: 'duka-auth' });
+const storage = createStorage('duka-auth');
 
 interface AuthState {
   user: User | null;

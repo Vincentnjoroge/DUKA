@@ -1,9 +1,9 @@
 import { create } from 'zustand';
-import { createMMKV } from 'react-native-mmkv';
+import { createStorage } from '../config/storage';
 import type { CartItem, Product } from '../types';
 import { CART_PERSIST_KEY, RECENT_PRODUCTS_COUNT } from '../constants';
 
-const storage = createMMKV({ id: 'duka-cart' });
+const storage = createStorage('duka-cart');
 
 interface CartState {
   items: CartItem[];
