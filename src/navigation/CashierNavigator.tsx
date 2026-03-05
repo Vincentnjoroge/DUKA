@@ -27,7 +27,7 @@ function CashierTabs() {
           backgroundColor: COLORS.surface,
           borderTopColor: COLORS.border,
           paddingBottom: 4,
-          height: 56,
+          height: 60,
         },
         tabBarLabelStyle: {
           fontSize: 12,
@@ -40,7 +40,7 @@ function CashierTabs() {
         component={POSScreen}
         options={{
           tabBarLabel: 'Sell',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>{'🛒'}</Text>,
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>{'◉'}</Text>,
         }}
       />
       <Tab.Screen
@@ -48,7 +48,7 @@ function CashierTabs() {
         component={ShiftSummaryScreen}
         options={{
           tabBarLabel: 'Summary',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>{'📊'}</Text>,
+          tabBarIcon: ({ color }) => <Text style={{ fontSize: 20, color }}>{'▤'}</Text>,
         }}
       />
     </Tab.Navigator>
