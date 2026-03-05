@@ -4,6 +4,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { StyleSheet } from 'react-native';
 import AppNavigator from './src/navigation/AppNavigator';
 import { useAppState } from './src/hooks/useAppState';
+import WebContainer from './src/components/common/WebContainer';
 
 function AppContent() {
   useAppState();
@@ -18,7 +19,9 @@ function AppContent() {
 export default function App() {
   return (
     <GestureHandlerRootView style={styles.container}>
-      <AppContent />
+      <WebContainer>
+        <AppContent />
+      </WebContainer>
     </GestureHandlerRootView>
   );
 }

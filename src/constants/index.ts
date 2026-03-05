@@ -49,7 +49,7 @@ export const COLORS = {
   surface: '#FFFFFF',
   text: '#212121',
   textSecondary: '#757575',
-  textLight: '#BDBDBD',
+  textLight: '#9E9E9E',
   error: '#D32F2F',
   errorLight: '#FFCDD2',
   success: '#2E7D32',
@@ -91,4 +91,15 @@ export const SPACING = {
   xl: 20,
   xxl: 24,
   xxxl: 32,
+} as const;
+
+// Tab Icons (accessible text-based, no emoji)
+export const ICONS = {
+  home: '⌂',
+  inventory: '☰',
+  orders: '⇄',
+  reports: '◈',
+  settings: '⚙',
+  sell: '◉',
+  summary: '▤',
 } as const;

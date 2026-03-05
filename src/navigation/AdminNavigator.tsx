@@ -1,7 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { COLORS } from '../constants';
 
 // Screens
@@ -41,7 +41,7 @@ function AdminTabs() {
           backgroundColor: COLORS.surface,
           borderTopColor: COLORS.border,
           paddingBottom: 4,
-          height: 56,
+          height: 60,
         },
         tabBarLabelStyle: { fontSize: 11, fontWeight: '600' },
       }}
@@ -51,7 +51,7 @@ function AdminTabs() {
         component={AdminDashboard}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 18, color }}>{'🏠'}</Text>,
+          tabBarIcon: ({ color }) => <View style={{ width: 24, height: 24, alignItems: 'center', justifyContent: 'center' }}><Text style={{ fontSize: 20, color }}>{'⌂'}</Text></View>,
         }}
       />
       <Tab.Screen
@@ -59,7 +59,7 @@ function AdminTabs() {
         component={InventoryScreen}
         options={{
           tabBarLabel: 'Inventory',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 18, color }}>{'📦'}</Text>,
+          tabBarIcon: ({ color }) => <View style={{ width: 24, height: 24, alignItems: 'center', justifyContent: 'center' }}><Text style={{ fontSize: 20, color }}>{'☰'}</Text></View>,
         }}
       />
       <Tab.Screen
@@ -67,7 +67,7 @@ function AdminTabs() {
         component={PurchaseOrdersScreen}
         options={{
           tabBarLabel: 'Orders',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 18, color }}>{'🚚'}</Text>,
+          tabBarIcon: ({ color }) => <View style={{ width: 24, height: 24, alignItems: 'center', justifyContent: 'center' }}><Text style={{ fontSize: 20, color }}>{'⇄'}</Text></View>,
         }}
       />
       <Tab.Screen
@@ -75,7 +75,7 @@ function AdminTabs() {
         component={ReportsScreen}
         options={{
           tabBarLabel: 'Reports',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 18, color }}>{'📈'}</Text>,
+          tabBarIcon: ({ color }) => <View style={{ width: 24, height: 24, alignItems: 'center', justifyContent: 'center' }}><Text style={{ fontSize: 20, color }}>{'◈'}</Text></View>,
         }}
       />
       <Tab.Screen
@@ -83,7 +83,7 @@ function AdminTabs() {
         component={SettingsScreen}
         options={{
           tabBarLabel: 'Settings',
-          tabBarIcon: ({ color }) => <Text style={{ fontSize: 18, color }}>{'⚙️'}</Text>,
+          tabBarIcon: ({ color }) => <View style={{ width: 24, height: 24, alignItems: 'center', justifyContent: 'center' }}><Text style={{ fontSize: 20, color }}>{'⚙'}</Text></View>,
         }}
       />
     </Tab.Navigator>
