@@ -123,7 +123,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   lockScreen: () => {
-    set({ isPinLocked: true });
+    const { user } = get();
+    // Only lock if user has a PIN configured
+    if (user?.pin_hash) {
+      set({ isPinLocked: true });
+    }
   },
 
   unlockWithPin: async (pin: string) => {
